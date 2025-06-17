@@ -19,9 +19,13 @@ jobs:
       with:
         php-version: '8.1'
 
+    - name: Instalar Composer
+      run: |
+        curl -sS https://getcomposer.org/installer | php
+        php composer.phar install
+
     - name: Ejecutar pruebas PHP (simulada)
       run: php -r "echo '✅ Entorno PHP listo para correr pruebas';"
 
     - name: Ejecutar pruebas PHPUnit
       run: vendor/bin/phpunit tests
-
