@@ -1,0 +1,165 @@
+/* Estilo básico de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+}
+/* Estilo para el enlace de "Editar usuario" */
+.editar-btn {
+    color: #000 !important; /* Color de texto negro (puedes cambiarlo si lo prefieres) */
+    text-decoration: none; /* Eliminar subrayado */
+    padding: 8px 12px; /* Espaciado alrededor del texto */
+    display: block;
+    text-align: center !important;
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Eliminar bordes si los tiene */
+}
+
+/* Eliminar cualquier efecto al pasar el mouse (hover) */
+.editar-btn:hover {
+    color: #4abdcc !important; /* Mantener el color igual */
+    background-color: transparent; /* No cambiar el fondo */
+    cursor: pointer; /* Mantener el cursor de puntero */
+}
+
+
+/* Estilo del contenedor de los formularios */
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1%;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Contenedor 3D */
+.card-3d-wrap {
+    perspective: 1000px;
+}
+
+/* Asegurar que el formulario crezca y el contenido se ajuste */
+.card-3d-wrapper {
+    position: relative;
+    width: 300px;
+    min-height: 700px; /* Ajustar según el formulario más largo */
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+/* Posicionamiento de las tarjetas */
+.card-front, .card-back {
+    position:absolute;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.773);
+    background-color: #fff;
+    padding: 20px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Cambios de formulario con el checkbox */
+input[type="checkbox"]:checked ~ .card-3d-wrap .card-3d-wrapper {
+    transform: rotateY(180deg);
+}
+
+/* Estilos para los inputs y botones */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los inputs y botones */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Cambios en la sección de contraseñas */
+.password-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;  /* Cambié de 'row' a 'column' para que los elementos estén uno debajo del otro */
+    margin-bottom: 10px;  /* Espaciado entre cada campo */
+}
+
+.password-container label {
+    margin-bottom: 5px;  /* Espaciado entre la etiqueta y el campo */
+    color: #000000;
+}
+
+.password-container input[type="password"] {
+    flex: 1;
+    padding-right: 35px; /* espacio para el icono */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    filter: grayscale(1);
+    transition: filter 0.3s ease;
+}
+
+.eye-icon:hover {
+    filter: grayscale(0);
+}
