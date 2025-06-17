@@ -27,5 +27,8 @@ jobs:
     - name: Ejecutar pruebas PHP (simulada)
       run: php -r "echo '✅ Entorno PHP listo para correr pruebas';"
 
+    - name: Dar permisos de ejecución a PHPUnit
+      run: chmod +x vendor/bin/phpunit
+
     - name: Ejecutar pruebas PHPUnit
       run: vendor/bin/phpunit tests
