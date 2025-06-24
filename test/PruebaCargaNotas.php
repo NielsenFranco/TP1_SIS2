@@ -23,3 +23,4 @@ class CargaNotasTest extends TestCase
         $this->assertNotNull($nota, "La nota no puede estar vacía.");
     }
 }
+?>

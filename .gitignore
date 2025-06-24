@@ -1,0 +1,4 @@
+# Ignorar caches de PHPUnit
+.phpunit.result.cache
+.phpunit.cache/
+vendor/bin/.phpunit.result.cache
